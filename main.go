@@ -22,10 +22,11 @@ var (
 	flagModel = flag.String("model", os.Getenv("OLLAMA_DEFAULT_MODEL"), "model to use")
 	flagDebug = flag.Bool("debug", false, "debug output")
 
-	jsonFormat    bool
-	filePath      string
-	appendToInput bool
-	prefixInput   bool
+	additionalPrompt string
+	jsonFormat       bool
+	filePath         string
+	appendToInput    bool
+	prefixInput      bool
 )
 
 func main() {
@@ -37,13 +38,17 @@ func main() {
 	flag.BoolVar(&prefixInput, "p", false, "prefix input")
 	flag.BoolVar(&prefixInput, "prefix", false, "prefix  input")
 
-	flag.BoolVar(&jsonFormat, "j", false, "json output")
-	flag.BoolVar(&jsonFormat, "json", false, "json output")
+	flag.BoolVar(&jsonFormat, "j", false, "JSON output")
+	flag.BoolVar(&jsonFormat, "json", false, "JSON output")
+	flag.BoolFunc("J", "JSON output with automatic „Respond using JSON” prompt", func(_ string) error {
+		jsonFormat = true
+		additionalPrompt = "Respond using JSON"
+		return nil
+	})
 	flag.Parse()
-
 	ctx := signals.SetupSignalHandler()
 
-	prompt := strings.Join(flag.Args(), " ")
+	prompt := strings.TrimSpace(strings.Join(flag.Args(), " "))
 
 	c, err := api.ClientFromEnvironment()
 	noerr(err)
@@ -58,6 +63,10 @@ func main() {
 		input, err = io.ReadAll(os.Stdin)
 		noerr(err)
 		prompt = fmt.Sprintf("%s\n\n%s", prompt, string(input))
+	}
+
+	if additionalPrompt != "" {
+		prompt = fmt.Sprintf("%s\n%s", prompt, additionalPrompt)
 	}
 
 	stream := false

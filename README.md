@@ -27,6 +27,7 @@ The program accepts several options that allow you to customize its behavior:
 * `-a`, `-append`: Print prompt befre output.
 * `-p`, `-prefix`: Print output and then prompt.
 * `-j`, `-json`: Output JSON (you must mention JSON in prompt).
+* `-J`: Output JSON (appends „Respond using JSON” to prompt).
 * `-model`: Model to use.
 
 Here's an example usage:

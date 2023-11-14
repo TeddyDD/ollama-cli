@@ -23,9 +23,10 @@ is specified. Prompt is constucted as follows:
 
 The program accepts several options that allow you to customize its behavior:
 
-* `-f`, `--file`: Path to the context file. If provided, the contents of this file will be used as input for the model.
-* `-a`, `--append`: Print prompt befre output.
-* `-p`, `--prefix`: Print output and then prompt.
+* `-f`, `-file`: Path to the context file. If provided, the contents of this file will be used as input for the model.
+* `-a`, `-append`: Print prompt befre output.
+* `-p`, `-prefix`: Print output and then prompt.
+* `-j`, `-json`: Output JSON (you must mention JSON in prompt).
 * `-model`: Model to use.
 
 Here's an example usage:

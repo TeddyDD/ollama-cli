@@ -22,6 +22,7 @@ var (
 	flagModel = flag.String("model", os.Getenv("OLLAMA_DEFAULT_MODEL"), "model to use")
 	flagDebug = flag.Bool("debug", false, "debug output")
 
+	jsonFormat    bool
 	filePath      string
 	appendToInput bool
 	prefixInput   bool
@@ -35,6 +36,9 @@ func main() {
 	flag.BoolVar(&appendToInput, "append", false, "append to input")
 	flag.BoolVar(&prefixInput, "p", false, "prefix input")
 	flag.BoolVar(&prefixInput, "prefix", false, "prefix  input")
+
+	flag.BoolVar(&jsonFormat, "j", false, "json output")
+	flag.BoolVar(&jsonFormat, "json", false, "json output")
 	flag.Parse()
 
 	ctx := signals.SetupSignalHandler()
@@ -66,10 +70,16 @@ func main() {
 		fmt.Println(string(input))
 	}
 
+	format := ""
+	if jsonFormat {
+		format = "json"
+	}
+
 	err = c.Generate(ctx, &api.GenerateRequest{
 		Model:  *flagModel,
 		Prompt: prompt,
 		Stream: &stream,
+		Format: format,
 	}, func(r api.GenerateResponse) error {
 		fmt.Println(r.Response)
 		return nil

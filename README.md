@@ -36,6 +36,11 @@ ollama-cli -f hello.go add comments
 echo '-- hello world' | ollama-cli -a \
     'write function in Lua based on the comment, dont wrap in markdown code block'
 echo 'def lerp(a,b,x):' | ollama-cli -p 'write comment for this function'
+
+# JSON
+LC_TIME=en_US TZ=UTC date |
+    ollama-cli -j date as json object with each component as separate field, skip timezone |
+    jq
 ```
 
 Append and prefix flags are designed for piping text from Kakoune with

@@ -26,6 +26,7 @@ The program accepts several options that allow you to customize its behavior:
 * `-f`, `-file`: Path to the context file. If provided, the contents of this file will be used as input for the model.
 * `-a`, `-append`: Print prompt befre output.
 * `-p`, `-prefix`: Print output and then prompt.
+* `-s`, `-system`: Override Ollama system prompt.
 * `-j`, `-json`: Output JSON (you must mention JSON in prompt).
 * `-o`, `-output-template`: Use template for output.
 * `-i`, `-input-template`: Use template to build prompt.

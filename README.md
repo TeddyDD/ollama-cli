@@ -27,6 +27,8 @@ The program accepts several options that allow you to customize its behavior:
 * `-a`, `-append`: Print prompt befre output.
 * `-p`, `-prefix`: Print output and then prompt.
 * `-j`, `-json`: Output JSON (you must mention JSON in prompt).
+* `-o`, `-output-template`: Use template for output.
+* `-i`, `-input-template`: Use template to build prompt.
 * `-J`: Output JSON (appends „Respond using JSON” to prompt).
 * `-model`: Model to use.
 
@@ -41,10 +43,39 @@ echo 'def lerp(a,b,x):' | ollama-cli -p 'write comment for this function'
 LC_TIME=en_US TZ=UTC date |
     ollama-cli -j date as json object with each component as separate field, skip timezone |
     jq
+
+ollama-cli -n \                                                        1s
+  -s 'You are AI model that talks like a pirate. Respond to questions.'\
+  'why sky is blue?'
 ```
 
 Append and prefix flags are designed for piping text from Kakoune with
 <kbd>|</kbd> key.
+
+## Templates
+
+Flags `-o` and `-i` use Go [text/template](https://godocs.io/text/template)
+syntax.
+
+Prompt template values:
+
+* Args: CLI args except flags, joined with spaces.
+* Stdin
+* File
+* FromFlags: Additional prompt that would be inserted, based on flags (see `-J` flag).
+* System: System prompt flag content.
+
+Output template values:
+
+* Prompt: struct with same fields as prompt template input.
+* RenderededPrompt: final prompt used for this generation.
+* Output: output produced by LLM.
+* Append, Prefix: booleans, flags `-a` and `-p` respectively.
+
+Additional functions:
+
+* `s regex input`: run [structural regexp](https://github.com/zyedidia/sregx) on the input and return printed (`p` command) text.
+* `codeBlock input`: extract markdown code block from input.
 
 ## Contributing
 

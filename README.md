@@ -62,18 +62,18 @@ syntax.
 
 Prompt template values:
 
-* Args: CLI args except flags, joined with spaces.
-* Stdin
-* File
-* FromFlags: Additional prompt that would be inserted, based on flags (see `-J` flag).
-* System: System prompt flag content.
+* `Args`: CLI args except flags, joined with spaces.
+* `Stdin`
+* `File`
+* `FromFlags`: Additional prompt that would be inserted, based on flags (see `-J` flag).
+* `System`: System prompt flag content.
 
 Output template values:
 
-* Prompt: struct with same fields as prompt template input.
-* RenderededPrompt: final prompt used for this generation.
-* Output: output produced by LLM.
-* Append, Prefix: booleans, flags `-a` and `-p` respectively.
+* `Prompt`: struct with same fields as prompt template input.
+* `RenderededPrompt`: final prompt used for this generation.
+* `Output`: output produced by LLM.
+* `Append`, `Prefix`: booleans, flags `-a` and `-p` respectively.
 
 Additional functions:
 

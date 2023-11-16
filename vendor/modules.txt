@@ -1,0 +1,34 @@
+# github.com/jmorganca/ollama v0.1.9
+## explicit; go 1.20
+github.com/jmorganca/ollama/api
+github.com/jmorganca/ollama/format
+github.com/jmorganca/ollama/version
+# github.com/zyedidia/gpeg v0.0.0-20210126031808-c49c92955001
+## explicit; go 1.15
+github.com/zyedidia/gpeg/capture
+github.com/zyedidia/gpeg/charset
+github.com/zyedidia/gpeg/input
+github.com/zyedidia/gpeg/isa
+github.com/zyedidia/gpeg/memo
+github.com/zyedidia/gpeg/pattern
+github.com/zyedidia/gpeg/vm
+# github.com/zyedidia/sregx v0.3.0
+## explicit; go 1.15
+github.com/zyedidia/sregx
+github.com/zyedidia/sregx/syntax
+# go.teddydd.me/plundered v0.0.0-20230417200935-b555276b925e
+## explicit; go 1.18
+go.teddydd.me/plundered/signals
+# golang.org/x/crypto v0.14.0
+## explicit; go 1.17
+golang.org/x/crypto/blowfish
+golang.org/x/crypto/chacha20
+golang.org/x/crypto/curve25519
+golang.org/x/crypto/curve25519/internal/field
+golang.org/x/crypto/internal/alias
+golang.org/x/crypto/internal/poly1305
+golang.org/x/crypto/ssh
+golang.org/x/crypto/ssh/internal/bcrypt_pbkdf
+# golang.org/x/sys v0.13.0
+## explicit; go 1.17
+golang.org/x/sys/cpu

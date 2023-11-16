@@ -1,5 +1,13 @@
+github.com/awalterschulze/gographviz v2.0.3+incompatible/go.mod h1:GEV5wmg4YquNw7v1kkyoX9etIk8yVmXj+AkDHuuETHs=
+github.com/blang/semver v3.5.1+incompatible/go.mod h1:kRBLl5iJ+tD4TcOOxsy/0fnwebNt5EWlYSAyrTnjyyk=
+github.com/jessevdk/go-flags v1.4.0/go.mod h1:4FA24M0QyGHXBuZZK/XkWh8h0e1EYbRYJSGM75WSRxI=
 github.com/jmorganca/ollama v0.1.9 h1:szvGhJkid2+wqBsDe7AoOdpt5Nmm36cPgejzBWZy/rc=
 github.com/jmorganca/ollama v0.1.9/go.mod h1:JKSFVMJFRLHnFh29KMJBVCczKBbEDlpsNwEvICekRmU=
+github.com/mattn/go-shellwords v1.0.11/go.mod h1:EZzvwXDESEeg03EKmM+RmDnNOPKG4lLtQsUlTZDWQ8Y=
+github.com/zyedidia/gpeg v0.0.0-20210126031808-c49c92955001 h1:kJaywTiqcPZHCmMwXYS54TcPc9Y23sX/JWYgx0h88JQ=
+github.com/zyedidia/gpeg v0.0.0-20210126031808-c49c92955001/go.mod h1:9nSexfJbFCFx3Arcz+joodU2uaHlxO/jpXr+qCy6ICY=
+github.com/zyedidia/sregx v0.3.0 h1:6oqhhkN74oDktL0l3juJ4ZaLr4jwDznyIZLhHKmMEA8=
+github.com/zyedidia/sregx v0.3.0/go.mod h1:kcTj74WrQKhDUgLMqgCUbFPZEc9Xie9vtmkUhbpfBRA=
 go.teddydd.me/plundered v0.0.0-20230417200935-b555276b925e h1:KMEzpHgvCfwXiW1ZpwFNn1wNXf/fxP3tGW9+DDyEoio=
 go.teddydd.me/plundered v0.0.0-20230417200935-b555276b925e/go.mod h1:CDWDin+n4d9NR7F7s47YqP0tqXHH/lCOFXQzoi8UDSI=
 golang.org/x/crypto v0.14.0 h1:wBqGXzWJW6m1XrIKlAH0Hs1JJ7+9KBwnIO8v66Q9cHc=

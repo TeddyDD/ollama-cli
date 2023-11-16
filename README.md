@@ -45,9 +45,11 @@ LC_TIME=en_US TZ=UTC date |
     ollama-cli -j date as json object with each component as separate field, skip timezone |
     jq
 
-ollama-cli -n \                                                        1s
+ollama-cli -n \
   -s 'You are AI model that talks like a pirate. Respond to questions.'\
   'why sky is blue?'
+
+ollama-cli -o 'Mistral says: {{ .Output }}' -n hello Mistral
 ```
 
 Append and prefix flags are designed for piping text from Kakoune with

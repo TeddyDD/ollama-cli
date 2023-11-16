@@ -129,6 +129,9 @@ func main() {
 	flag.BoolVar(&noStdin, "n", false, "no standard input")
 	flag.BoolVar(&noStdin, "nostdin", false, "no standard input")
 
+	flag.StringVar(&prompt.System, "s", "", "override Ollama system prompot")
+	flag.StringVar(&prompt.System, "system", "", "override Ollama system prompot")
+
 	flag.BoolVar(&appendToInput, "a", false, "write input and then output using default template")
 	flag.BoolVar(&appendToInput, "append", false, "write input and then output using default template")
 	flag.BoolVar(&prefixInput, "p", false, "write output and then input using default template")
@@ -191,6 +194,7 @@ func main() {
 		Prompt: renderedPrompt,
 		Stream: &stream,
 		Format: format,
+		System: prompt.System,
 	}, func(r api.GenerateResponse) error {
 		o := Output{
 			Prompt:           prompt,
